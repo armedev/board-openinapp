@@ -1,0 +1,74 @@
+@import "../../utils/include-media.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include media("<tablet") {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  &__utilities {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include media("<tablet") {
+      gap: 10px;
+      justify-content: space-between;
+    }
+
+    &__search {
+      display: flex;
+      width: fit-content;
+      align-items: center;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 20px;
+
+      input {
+        outline: none;
+        padding: 5px;
+        width: 200px;
+        background-color: none;
+        border: none;
+        border-radius: 20px;
+        @include media("<tablet") {
+          width: 150px;
+        }
+      }
+
+      img {
+        width: 20px;
+        cursor: pointer;
+        height: 20px;
+      }
+    }
+
+    span {
+      width: auto;
+      height: 50px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      img {
+        width: 25px;
+        height: auto;
+      }
+    }
+
+    span:nth-last-child(1) {
+      img {
+        height: 40px;
+        width: auto;
+      }
+    }
+  }
+}

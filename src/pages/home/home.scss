@@ -1,0 +1,16 @@
+@import "../../utils/include-media.scss";
+
+.home {
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+
+  background-color: none;
+  display: flex;
+  gap: 30px;
+
+  @include media("<tablet") {
+    display: block;
+    padding: 10px;
+  }
+}

@@ -1,27 +1,42 @@
-import type { Component } from 'solid-js';
+import { createSignal, type Component, createEffect } from "solid-js";
+import { Router, Route, Routes } from "@solidjs/router";
+import { User, onAuthStateChanged } from "firebase/auth";
 
-import logo from './logo.svg';
-import styles from './App.module.css';
+import styles from "./App.module.scss";
+import Home from "./pages/home/home";
+import Auth from "./pages/auth/auth";
+import { auth } from "./firebase/config";
+import Loading from "./components/loading/loading";
+
+const [session, setSession] = createSignal<User | null>();
+const [loading, setLoading] = createSignal(true);
 
 const App: Component = () => {
+  createEffect(() => {
+    const unsub = onAuthStateChanged(auth, (data) => {
+      setSession(data || null);
+      setLoading(false);
+    });
+
+    return unsub;
+  });
+
   return (
     <div class={styles.App}>
-      <header class={styles.header}>
-        <img src={logo} class={styles.logo} alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
-      </header>
+      <Router>
+        {loading() ? (
+          <Loading />
+        ) : (
+          <Routes>
+            <Route path={"/"} component={Home} />
+            <Route path={"/auth"} component={Auth} />
+          </Routes>
+        )}
+      </Router>
     </div>
   );
 };
+
+export { session, loading };
 
 export default App;

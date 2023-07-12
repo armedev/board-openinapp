@@ -1,0 +1,235 @@
+@import "../../utils/include-media.scss";
+
+.body {
+  flex-grow: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+
+  &__row1 {
+    // flex-grow: 1;
+    // background-color: red;
+    width: 100%;
+    display: flex;
+    // align-items: start;
+    // justify-content:;
+    flex-wrap: wrap;
+    gap: 30px;
+    // padding: 0px 20px;
+    @include media("<tablet") {
+      gap: 20px;
+    }
+
+    &__items {
+      background-color: #fff;
+      border-radius: 20px;
+      height: 120px;
+      width: 220px;
+      flex-grow: 1;
+      max-width: 350px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: flex-end;
+      gap: 10px;
+      padding: 20px;
+      position: relative;
+      @include media("<tablet") {
+        width: 150px;
+        height: 110px;
+        gap: 5px;
+      }
+
+      img {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+
+        // transform: translate(-50%, -50%);
+        top: 20px;
+        right: 20px;
+        @include media("<tablet") {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      &:nth-child(1) {
+        background-color: #ddefe0;
+      }
+
+      &:nth-child(2) {
+        background-color: #f4eddd;
+      }
+
+      &:nth-child(3) {
+        background-color: #efdada;
+      }
+
+      &:nth-child(4) {
+        background-color: #dfe0ef;
+      }
+
+      &__key {
+        font-size: 14px;
+        @include media("<tablet") {
+          font-size: 12px;
+        }
+      }
+
+      &__value {
+        font-weight: 700;
+        font-size: 24px;
+        @include media("<tablet") {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  &__row2 {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    &__items {
+      padding: 20px;
+      flex-grow: 1;
+      height: 100%;
+      background-color: #fff;
+      border-radius: 20px;
+      @include media("<tablet") {
+        padding: 10px;
+      }
+
+      & > span {
+        display: flex;
+        flex-direction: column;
+
+        span {
+          &:nth-child(1) {
+            font-size: 18px;
+            font-weight: 700;
+          }
+
+          &:nth-child(2) {
+            color: #858585;
+            font-size: 12px;
+          }
+        }
+      }
+
+      SolidApexCharts {
+        width: 100%;
+      }
+    }
+  }
+
+  &__row3 {
+    flex-grow: 2;
+    // background-color: red;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+
+    @include media("<tablet") {
+      gap: 20px;
+    }
+
+    &__items {
+      background-color: #fff;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      flex-grow: 1;
+
+      & > span {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        span {
+          &:nth-child(1) {
+            font-size: 18px;
+            font-weight: 700;
+          }
+
+          &:nth-child(2) {
+            font-size: 14px;
+            color: #858585;
+          }
+        }
+      }
+
+      SolidApexCharts {
+        width: 100%;
+      }
+    }
+
+    &__items2 {
+      width: 500px;
+      background-color: #fff;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: 20px;
+      gap: 10px;
+      flex-grow: 1;
+
+      & > span.title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        span {
+          &:nth-child(1) {
+            font-size: 18px;
+            font-weight: 700;
+          }
+
+          &:nth-child(2) {
+            font-size: 12px;
+            font-weight: 400;
+            color: #858585;
+          }
+        }
+      }
+
+      & > span.body {
+        display: flex;
+        flex-direction: column;
+
+        & > span {
+          display: flex;
+          flex-direction: column;
+
+          padding: 5px;
+          border-left: 5px solid #9bdd7c;
+
+          &:nth-child(2) {
+            border-left: 5px solid #6972c3;
+          }
+          span {
+            &:nth-child(1) {
+              font-size: 14px;
+              font-weight: 700;
+              color: #666666;
+            }
+            padding: 2px;
+            font-size: 12px;
+            font-weight: 400;
+            color: #999999;
+          }
+        }
+      }
+    }
+  }
+}
