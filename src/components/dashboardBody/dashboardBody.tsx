@@ -36,7 +36,7 @@ const DashboardBody: Component = () => {
   createEffect(() => {
     const fetchData = async () => {
       const res = await fetch(
-        "http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=2c36818bb5ca9e829313dd736fd15859"
+        "https://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=2c36818bb5ca9e829313dd736fd15859"
       );
       const data = await res.json();
 
