@@ -2,7 +2,7 @@ import type { Component } from "solid-js";
 
 import "./header.scss";
 
-import ProfilePic from "../../assets/profile.svg";
+import ProfilePic from "../../assets/profile.png";
 import NotifyPic from "../../assets/notify.svg";
 import SearchPic from "../../assets/search.svg";
 
